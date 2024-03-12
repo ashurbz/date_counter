@@ -19,6 +19,11 @@ const Body = () => {
     setCount(count + step);
   };
 
+  const date = new Date("March 12 2024");
+
+  date.setDate(date.getDate() + count);
+  const reqDate = date.toDateString();
+
   return (
     <div>
       <div className="container">
@@ -32,7 +37,14 @@ const Body = () => {
           <span>{count}</span>
           <button onClick={handlePlusCount}>+</button>
         </div>
-        <div className="date">Date</div>
+        <span className="date">
+          {count === 0
+            ? `Today is `
+            : count >= 1
+            ? `The date after ${count} days`
+            : `The date Ago ${count} days`}
+        </span>
+        <span>{reqDate}</span>
       </div>
     </div>
   );

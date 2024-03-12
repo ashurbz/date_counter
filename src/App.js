@@ -1,5 +1,10 @@
+import Body from "./Body";
 function App() {
-  return <div className="App">hiiii</div>;
+  return (
+    <div>
+      <Body />
+    </div>
+  );
 }
 
 export default App;
